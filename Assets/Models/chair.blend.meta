@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3e8e649f9a21f1c4eaa6ac375a25c247
+guid: 854df6f97150a5d4da63c9224ba86577
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
@@ -8,7 +8,7 @@ ModelImporter:
     2100000: unnamed
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Cube
+    4300000: Cube_001
     7400000: Default Take
     9500000: //RootNode
   externalObjects: {}
