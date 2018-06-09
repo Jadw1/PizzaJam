@@ -5,12 +5,18 @@ public class Door : MonoBehaviour {
     public float maxOffset = 2.0f;
     public float speed = 2.0f;
     public float closeTime = 5.0f;
+    public Door symmetricDoor;
 
     private float offset = 0.0f;
     private float timeToClose = 0.0f;
     private bool isOpening = false;
 
     public void Open() {
+        isOpening = true;
+        symmetricDoor.SymmetricalOpen();
+    }
+
+    public void SymmetricalOpen() {
         isOpening = true;
     }
 
