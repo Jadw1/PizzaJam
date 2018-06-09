@@ -11,8 +11,8 @@ public class PortalManager : MonoBehaviour {
     public static void CreatePortal(Portal portalA, Portal portalB) {
         cameraA.cameraPortal = cameraB.oppositePortal = portalA.transform;
         cameraA.oppositePortal = cameraB.cameraPortal = portalB.transform;
-        portalA.renderPlane.material = materialA;
-        portalB.renderPlane.material = materialB;
+        portalA.renderPlane.material = materialB;
+        portalB.renderPlane.material = materialA;
         portalA.colliderPlane.receiver = portalB.colliderPlane.transform;
         portalB.colliderPlane.receiver = portalA.colliderPlane.transform;
     }
