@@ -19,14 +19,14 @@ public class RoomTower : MonoBehaviour {
         rooms[0] = Instantiate(roomStarting, transform, false);
 
         for (int i = 1; i <= layers; i++) {
-            rooms[i] = Instantiate(roomArray[(int) Random.Range(0, roomArray.Length-1)], transform, false);
+            rooms[i] = Instantiate(roomArray[(int) Random.Range(0, roomArray.Length)], transform, false);
         }
 
         rooms[layers + 1] = Instantiate(roomEnding, transform, false);
 
         for (int i = 0; i < rooms.Length; i++) {
             rooms[i].name = "Room " + i;
-            rooms[i].transform.localPosition = new Vector3(0, 5 * i, 0);
+            rooms[i].transform.localPosition = new Vector3(0, -5 * i, 0);
         }
     }
 }
