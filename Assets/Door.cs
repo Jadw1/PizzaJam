@@ -6,6 +6,7 @@ public class Door : MonoBehaviour {
     public float speed = 2.0f;
     public float closeTime = 5.0f;
     public Door symmetricDoor;
+    public Transform portal;
 
     private float offset = 0.0f;
     private float timeToClose = 0.0f;
@@ -14,10 +15,17 @@ public class Door : MonoBehaviour {
     public void Open() {
         isOpening = true;
         symmetricDoor.SymmetricalOpen();
+        PortalManager.CreatePortals(portal, symmetricDoor.portal);
     }
 
     public void SymmetricalOpen() {
         isOpening = true;
+    }
+
+    private void Start() {
+        if(portal == null) {
+            Debug.LogError("No portal assigned!");
+        }
     }
 
     private void Update() {
@@ -34,7 +42,7 @@ public class Door : MonoBehaviour {
             else {
                 offset += deltaOffset;
             }
-            transform.Translate(transform.right * deltaOffset);
+            transform.Translate(Vector3.right * deltaOffset);
         }
 
         if (!isOpening && offset > 0.0f && timeToClose <= 0.0f) {
@@ -47,7 +55,7 @@ public class Door : MonoBehaviour {
             else {
                 offset -= deltaOffset;
             }
-            transform.Translate(transform.right * deltaOffset * -1);
+            transform.Translate(Vector3.right * deltaOffset * -1);
         }
 
         timeToClose -= Time.deltaTime;
