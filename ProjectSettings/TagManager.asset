@@ -11,6 +11,8 @@ TagManager:
   - PM
   - MessageSystem
   - DoorPortal
+  - StartRoom
+  - EndRoom
   layers:
   - Default
   - TransparentFX

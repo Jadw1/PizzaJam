@@ -1361,8 +1361,8 @@ GameObject:
   - component: {fileID: 33904108526376278}
   - component: {fileID: 23877980128903164}
   - component: {fileID: 64644583315111176}
-  - component: {fileID: 114368970387848236}
   - component: {fileID: 114656443789598494}
+  - component: {fileID: 114488624863219746}
   m_Layer: 0
   m_Name: Room 6
   m_TagString: Untagged
@@ -3185,7 +3185,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1509167043835906}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -29, y: 0, z: 24}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4404178506504076}
@@ -10289,20 +10289,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   renderPlane: {fileID: 23105145326798598}
   colliderPlane: {fileID: 114860438435119078}
---- !u!114 &114368970387848236
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1509167043835906}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df988a2836e6bf04cb9fe3361fb67049, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  doors: []
-  entryDoor: 0
-  exitDoor: 0
 --- !u!114 &114381994768747502
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10383,6 +10369,20 @@ MonoBehaviour:
   speed: 2
   closeTime: 5
   symmetricDoor: {fileID: 0}
+--- !u!114 &114488624863219746
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1509167043835906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df988a2836e6bf04cb9fe3361fb67049, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doors: []
+  entryDoor: 0
+  exitDoor: 0
 --- !u!114 &114497129707060320
 MonoBehaviour:
   m_ObjectHideFlags: 1
