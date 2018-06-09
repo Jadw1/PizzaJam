@@ -4,6 +4,8 @@ public class PortalTeleport : MonoBehaviour {
 
     public Transform player;
     public Transform receiver;
+    public Transform portal;
+    public Transform receiverPortal;
 
     private bool playerIsOverlapping = false;
 
@@ -13,9 +15,10 @@ public class PortalTeleport : MonoBehaviour {
             float dotProduct = Vector3.Dot(transform.up, portalToPlayer);
 
             if(dotProduct < 0.0f) {
-                float rotationDiff = Quaternion.Angle(transform.rotation, receiver.rotation);
-                Debug.Log(rotationDiff);
-                //rotationDiff += 180;
+                float rotationDiff = transform.rotation.eulerAngles.y - receiver.rotation.eulerAngles.y;
+                if((rotationDiff >= 175 && rotationDiff <= 185) || (rotationDiff >= -5 && rotationDiff <= 5) || (rotationDiff >= -185 && rotationDiff <= -175)) {
+                    rotationDiff += 180;
+                }
                 player.Rotate(Vector3.up, rotationDiff);
 
                 Vector3 positionOffset = Quaternion.Euler(0.0f, rotationDiff, 0.0f) * portalToPlayer;

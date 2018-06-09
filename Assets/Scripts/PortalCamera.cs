@@ -12,7 +12,7 @@ public class PortalCamera : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void LateUpdate () {
         float angularDifference = Quaternion.Angle(cameraPortal.rotation, oppositePortal.rotation);
         Quaternion portalRotationalDifference = Quaternion.AngleAxis(angularDifference, Vector3.up);
 
