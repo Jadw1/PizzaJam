@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 23758624004306494}
   - component: {fileID: 65042437447703092}
   - component: {fileID: 114827905573231524}
+  - component: {fileID: 114925932119184886}
   m_Layer: 0
   m_Name: Pizza
   m_TagString: Pizza
@@ -262,7 +263,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1792959575922372}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -2.2956634, y: -1.3340917, z: -5.690118}
+  m_LocalPosition: {x: -2.859668, y: -1.4809842, z: -8.532293}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4661733118714458}
@@ -838,3 +839,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tower: {fileID: 0}
+--- !u!114 &114925932119184886
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1122428457054678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4109218eb3c20c4f957d1987f6be64d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  messages:
+  - Yes, splendid.
+  - You can go back now.
+  - Is it me or did something just happen?
+  - Nah, must be my imagination.
+  - Hope you remember the way back.
+  destroy: 0
