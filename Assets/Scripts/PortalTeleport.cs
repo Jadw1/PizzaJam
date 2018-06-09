@@ -2,10 +2,14 @@
 
 public class PortalTeleport : MonoBehaviour {
 
-    public Transform player;
+    private Transform player;
     public Transform receiver;
 
     private bool playerIsOverlapping = false;
+
+    private void Start() {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+    }
 
     void Update () {
         if (playerIsOverlapping) {
