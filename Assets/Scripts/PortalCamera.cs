@@ -47,7 +47,7 @@ public class PortalCamera : MonoBehaviour {
         }
         else if (gameObject.name == "Camera_B") {
             if (angularDifference >= -5 && angularDifference <= 5) {
-
+                angularDifference += 180;
             }
             else if (angularDifference >= 85 && angularDifference <= 95) {
                 angularDifference += 180;

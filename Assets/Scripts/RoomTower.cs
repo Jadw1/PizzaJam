@@ -20,13 +20,13 @@ public class RoomTower : MonoBehaviour {
 
         for (int i = 1; i <= layers; i++) {
             rooms[i] = Instantiate(roomArray[Random.Range(0, roomArray.Length)], transform, false);
-            rooms[i].GetComponent<RoomController>().DeactivateDoors();			
+            rooms[i].GetComponent<RoomController>().DeactivateDoors(i);			
 		}
 
         rooms[layers + 1] = Instantiate(endRoom, transform, false);
 
         for(int i = 0; i < rooms.Length; i++) {
-            rooms[i].transform.localPosition = new Vector3(50.0f * i, 0.0f, 0.0f);
+            rooms[i].transform.localPosition = new Vector3(0.0f, 5.0f * i, 0.0f);
         }
 
         for (int i = 0; i < rooms.Length - 1; i++) {

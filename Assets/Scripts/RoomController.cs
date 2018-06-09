@@ -4,6 +4,7 @@ public class RoomController : MonoBehaviour {
 	public Door[] doors;
     public int entryDoorIndex;
     public int exitDoorIndex;
+    public int roomIndex;
 
     public Door entryDoor {
         get { return doors[entryDoorIndex]; }
@@ -27,7 +28,9 @@ public class RoomController : MonoBehaviour {
         }
     }
 
-    public void DeactivateDoors() {
+    public void DeactivateDoors(int index) {
+        roomIndex = index;
+
         for(int i = 0; i < doors.Length; i++) {
             if (i == entryDoorIndex || i == exitDoorIndex) {
                 continue;
