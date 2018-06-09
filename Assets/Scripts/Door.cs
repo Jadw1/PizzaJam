@@ -34,7 +34,7 @@ public class Door : MonoBehaviour {
             else {
                 offset += deltaOffset;
             }
-            transform.Translate(transform.right * deltaOffset);
+            transform.Translate(Vector3.right * deltaOffset);
         }
 
         if (!isOpening && offset > 0.0f && timeToClose <= 0.0f) {
@@ -47,7 +47,7 @@ public class Door : MonoBehaviour {
             else {
                 offset -= deltaOffset;
             }
-            transform.Translate(transform.right * deltaOffset * -1);
+            transform.Translate(Vector3.right * deltaOffset * -1);
         }
 
         timeToClose -= Time.deltaTime;

@@ -7,7 +7,6 @@ public class PortalTeleport : MonoBehaviour {
 
     private bool playerIsOverlapping = false;
 
-    // Update is called once per frame
     void Update () {
         if (playerIsOverlapping) {
             Vector3 portalToPlayer = player.position - transform.position;
@@ -15,7 +14,8 @@ public class PortalTeleport : MonoBehaviour {
 
             if(dotProduct < 0.0f) {
                 float rotationDiff = Quaternion.Angle(transform.rotation, receiver.rotation);
-                rotationDiff += 180;
+                Debug.Log(rotationDiff);
+                //rotationDiff += 180;
                 player.Rotate(Vector3.up, rotationDiff);
 
                 Vector3 positionOffset = Quaternion.Euler(0.0f, rotationDiff, 0.0f) * portalToPlayer;
