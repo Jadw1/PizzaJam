@@ -1,7 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class RoomController : MonoBehaviour {
-	public DoorTeleporter[] doors;
+	public Door[] doors;
+    public int entryDoor;
+    public int exitDoor;
+
+    private void Start() {
+        doors = transform.GetComponentsInChildren<Door>();
+    }
 }

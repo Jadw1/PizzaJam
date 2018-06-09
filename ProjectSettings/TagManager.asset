@@ -9,6 +9,8 @@ TagManager:
   - CameraB
   - Pizza
   - PM
+  - MessageSystem
+  - DoorPortal
   layers:
   - Default
   - TransparentFX

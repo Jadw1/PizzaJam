@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RoomTower : MonoBehaviour {
-    public GameObject roomStarting;
+    /*public GameObject roomStarting;
     public GameObject roomEnding;
     public GameObject[] roomArray;
 
@@ -74,5 +74,5 @@ public class RoomTower : MonoBehaviour {
 				}
 			}
 		}
-	}
+	}*/
 }
