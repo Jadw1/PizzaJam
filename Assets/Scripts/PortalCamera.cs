@@ -24,29 +24,34 @@ public class PortalCamera : MonoBehaviour {
 	
 	void LateUpdate () {
         float angularDifference = cameraPortal.rotation.eulerAngles.y - oppositePortal.rotation.eulerAngles.y;
-        angularDifference = Mathf.Abs(angularDifference);
-        Debug.Log(angularDifference);
+        angularDifference = ClampAngle(angularDifference);
+        Debug.Log(gameObject.name + angularDifference);
 
-        if(angularDifference >= -5 && angularDifference <= 5) {
-            if(gameObject.name == "Camera_A") {
+        if (gameObject.name == "Camera_A") {
+            if (angularDifference == 0) {
+                angularDifference += 180;
+            }
+            else if (angularDifference == 90) {
+                angularDifference += 180;
+            }
+            else if (angularDifference == 180) {
+                angularDifference += 180;
+            }
+            else if (angularDifference == 270) {
                 angularDifference += 180;
             }
         }
-        else if (angularDifference >= 85 && angularDifference <= 95) {
-            if (gameObject.name == "Camera_B") {
+        else if (gameObject.name == "Camera_B") {
+            if (angularDifference == 0) {
+
+            }
+            else if (angularDifference == 90) {
                 angularDifference += 180;
             }
-        }
-        else if (angularDifference >= 175 && angularDifference <= 185) {
-            if (gameObject.name == "Camera_A") {
+            else if (angularDifference == 180) {
                 angularDifference += 180;
             }
-            if (gameObject.name == "Camera_B") {
-                angularDifference += 180;
-            }
-        }
-        else if (angularDifference >= 265 && angularDifference <= 275) {
-            if (gameObject.name == "Camera_B") {
+            else if (angularDifference == 270) {
                 angularDifference += 180;
             }
         }
