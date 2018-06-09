@@ -2,30 +2,37 @@
 
 public class RoomController : MonoBehaviour {
 	public Door[] doors;
-    public int entryDoor;
-    public int exitDoor;
+    public int entryDoorIndex;
+    public int exitDoorIndex;
 
-    private void Start() {
+    public Door entryDoor {
+        get { return doors[entryDoorIndex]; }
+    }
+    public Door exitDoor {
+        get { return doors[exitDoorIndex]; }
+    }
+
+
+    private void Awake() {
         doors = transform.GetComponentsInChildren<Door>();
         if(gameObject.tag != "StartRoom" && gameObject.tag != "EndRoom") {
-            entryDoor = Random.Range(0, doors.Length);
-            exitDoor = Random.Range(0, doors.Length);
-            while(entryDoor == exitDoor) {
-                exitDoor = Random.Range(0, doors.Length);
+            entryDoorIndex = Random.Range(0, doors.Length);
+            exitDoorIndex = Random.Range(0, doors.Length);
+            while(entryDoorIndex == exitDoorIndex) {
+                exitDoorIndex = Random.Range(0, doors.Length);
             }
         }
         else {
-            entryDoor = exitDoor = 0;
+            entryDoorIndex = exitDoorIndex = 0;
         }
     }
 
     public void DeactivateDoors() {
-        Debug.Log("Deactivating");
         for(int i = 0; i < doors.Length; i++) {
-            if (i == entryDoor || i == exitDoor) {
+            if (i == entryDoorIndex || i == exitDoorIndex) {
                 continue;
             }
-
+            
             doors[i].Deactivate();
         }
     }

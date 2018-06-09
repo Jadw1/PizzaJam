@@ -40,4 +40,9 @@ public class PortalManager : MonoBehaviour {
         SetMaterials(transform.GetComponent<PortalTextureSetup>());
         SetCameras();
     }
+
+    public static void MergeDoors(Door doorA, Door doorB) {
+        doorA.symmetricDoor = doorB;
+        doorB.symmetricDoor = doorA;
+    }
 }

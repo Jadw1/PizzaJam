@@ -29,7 +29,11 @@ public class RoomTower : MonoBehaviour {
             rooms[i].transform.localPosition = new Vector3(0.0f, 5.0f * i, 0.0f);
         }
 
-		/*GameObject pizza = GameObject.FindWithTag("Pizza");
+        for (int i = 0; i < rooms.Length - 1; i++) {
+            PortalManager.MergeDoors(rooms[i].GetComponent<RoomController>().exitDoor, rooms[i + 1].GetComponent<RoomController>().entryDoor);
+        }
+
+        /*GameObject pizza = GameObject.FindWithTag("Pizza");
 		if (pizza != null) {
 			pizza.GetComponent<PizzaLogic>().tower = this;
 		}
