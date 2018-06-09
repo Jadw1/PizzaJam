@@ -58,4 +58,9 @@ public class Door : MonoBehaviour {
 
         timeToClose -= Time.deltaTime;
     }
+
+    public void Deactivate() {
+        Debug.Log("Closing door!");
+        transform.parent.gameObject.SetActive(false);
+    }
 }

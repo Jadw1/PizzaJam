@@ -26,7 +26,7 @@ public class RoomController : MonoBehaviour {
                 continue;
             }
 
-            doors[i].gameObject.SetActive(false);
+            doors[i].Deactivate();
         }
     }
 }
