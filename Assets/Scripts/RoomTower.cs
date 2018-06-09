@@ -26,7 +26,7 @@ public class RoomTower : MonoBehaviour {
         rooms[layers + 1] = Instantiate(endRoom, transform, false);
 
         for(int i = 0; i < rooms.Length; i++) {
-            rooms[i].transform.localPosition = new Vector3(0.0f, 5.0f * i, 0.0f);
+            rooms[i].transform.localPosition = new Vector3(50.0f * i, 0.0f, 0.0f);
         }
 
         for (int i = 0; i < rooms.Length - 1; i++) {

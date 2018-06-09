@@ -32,30 +32,30 @@ public class PortalCamera : MonoBehaviour {
         Debug.Log(gameObject.name + angularDifference);
 
         if (gameObject.name == "Camera_A") {
-            if (angularDifference == 0) {
+            if (angularDifference >= -5 && angularDifference <= 5) {
                 angularDifference += 180;
             }
-            else if (angularDifference == 90) {
+            else if (angularDifference >= 85 && angularDifference <= 95) {
                 angularDifference += 180;
             }
-            else if (angularDifference == 180) {
+            else if (angularDifference >= 175 && angularDifference <= 185) {
                 angularDifference += 180;
             }
-            else if (angularDifference == 270) {
+            else if (angularDifference >= 265 && angularDifference <= 275) {
                 angularDifference += 180;
             }
         }
         else if (gameObject.name == "Camera_B") {
-            if (angularDifference == 0) {
+            if (angularDifference >= -5 && angularDifference <= 5) {
 
             }
-            else if (angularDifference == 90) {
+            else if (angularDifference >= 85 && angularDifference <= 95) {
                 angularDifference += 180;
             }
-            else if (angularDifference == 180) {
+            else if (angularDifference >= 175 && angularDifference <= 185) {
                 angularDifference += 180;
             }
-            else if (angularDifference == 270) {
+            else if (angularDifference >= 265 && angularDifference <= 275) {
                 angularDifference += 180;
             }
         }
