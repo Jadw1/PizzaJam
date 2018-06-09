@@ -28,6 +28,11 @@ public class RoomTower : MonoBehaviour {
 
         rooms[layers + 1] = Instantiate(roomEnding, transform, false);
 
+		GameObject pizza = GameObject.FindWithTag("Pizza");
+		if (pizza != null) {
+			pizza.GetComponent<PizzaLogic>().tower = this;
+		}
+
 		int last = -1;
 
         for (int i = 0; i < rooms.Length; i++) {
@@ -56,4 +61,18 @@ public class RoomTower : MonoBehaviour {
 			}
 		}
     }
+
+	public void pizzaTaken() {
+		DoorTeleporter pizza = rooms[rooms.Length - 1].GetComponent<RoomController>().doors[0];
+
+		foreach (GameObject room in rooms) {
+			foreach(DoorTeleporter door in room.GetComponent<RoomController>().doors) {
+				door.gameObject.SetActive(true);
+
+				if (door.link == null) {
+					door.link = pizza;
+				}
+			}
+		}
+	}
 }

@@ -7,6 +7,7 @@ TagManager:
   - Door
   - CameraA
   - CameraB
+  - Pizza
   layers:
   - Default
   - TransparentFX
