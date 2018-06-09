@@ -208,6 +208,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 79363503}
+  - component: {fileID: 79363504}
   m_Layer: 0
   m_Name: Portal_B
   m_TagString: Untagged
@@ -233,6 +234,19 @@ Transform:
   m_Father: {fileID: 1967673893}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &79363504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 79363502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ea37c8281accf54f895a9975f987221, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  renderPlane: {fileID: 1637108863}
+  colliderPlane: {fileID: 975166385}
 --- !u!1 &120565808
 GameObject:
   m_ObjectHideFlags: 0
@@ -525,8 +539,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 2048259293}
   receiver: {fileID: 975166384}
-  portal: {fileID: 0}
-  receiverPortal: {fileID: 0}
 --- !u!1 &207236389
 GameObject:
   m_ObjectHideFlags: 0
@@ -699,7 +711,7 @@ GameObject:
   - component: {fileID: 268160740}
   - component: {fileID: 268160739}
   m_Layer: 0
-  m_Name: Door
+  m_Name: Door_C
   m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -732,7 +744,8 @@ MonoBehaviour:
   maxOffset: 2
   speed: 2
   closeTime: 5
-  symmetricDoor: {fileID: 2048660538}
+  symmetricDoor: {fileID: 1403193895}
+  portal: {fileID: 1747894374}
 --- !u!65 &268160740
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1157,7 +1170,7 @@ GameObject:
   - component: {fileID: 499002547}
   m_Layer: 0
   m_Name: Camera_B
-  m_TagString: Untagged
+  m_TagString: CameraB
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1488,9 +1501,10 @@ GameObject:
   m_Component:
   - component: {fileID: 606036594}
   - component: {fileID: 606036592}
+  - component: {fileID: 606036593}
   m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
+  m_Name: PortalManager
+  m_TagString: PM
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1510,6 +1524,17 @@ MonoBehaviour:
   cameraB: {fileID: 499002548}
   cameraMatA: {fileID: 2100000, guid: 445664c4f7cd5de45a00b80fa110eb1f, type: 2}
   cameraMatB: {fileID: 2100000, guid: fda111c27b9ab5f4490ea015a7408a82, type: 2}
+--- !u!114 &606036593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 606036591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80beb1370a8cb4846aa9cfc3b9fd1ab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &606036594
 Transform:
   m_ObjectHideFlags: 0
@@ -1535,7 +1560,7 @@ GameObject:
   - component: {fileID: 657840575}
   m_Layer: 0
   m_Name: Camera_A
-  m_TagString: Untagged
+  m_TagString: CameraA
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1822,8 +1847,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 2048259293}
   receiver: {fileID: 190369232}
-  portal: {fileID: 0}
-  receiverPortal: {fileID: 0}
 --- !u!65 &975166386
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2201,6 +2224,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1171346363}
+  - component: {fileID: 1171346364}
   m_Layer: 0
   m_Name: Portal_D
   m_TagString: Untagged
@@ -2226,6 +2250,19 @@ Transform:
   m_Father: {fileID: 1583690219}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1171346364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1171346362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ea37c8281accf54f895a9975f987221, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  renderPlane: {fileID: 228378894}
+  colliderPlane: {fileID: 1506501218}
 --- !u!1 &1191960834
 GameObject:
   m_ObjectHideFlags: 0
@@ -2321,6 +2358,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1212196607}
+  - component: {fileID: 1212196608}
   m_Layer: 0
   m_Name: Portal_A
   m_TagString: Untagged
@@ -2346,6 +2384,19 @@ Transform:
   m_Father: {fileID: 865893240}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1212196608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1212196606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ea37c8281accf54f895a9975f987221, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  renderPlane: {fileID: 1134507324}
+  colliderPlane: {fileID: 190369234}
 --- !u!1 &1237357452
 GameObject:
   m_ObjectHideFlags: 0
@@ -2504,8 +2555,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 2048259293}
   receiver: {fileID: 190369232}
-  portal: {fileID: 0}
-  receiverPortal: {fileID: 0}
 --- !u!65 &1318408375
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2616,7 +2665,7 @@ GameObject:
   - component: {fileID: 1403193896}
   - component: {fileID: 1403193895}
   m_Layer: 0
-  m_Name: Door
+  m_Name: Door_D
   m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2649,7 +2698,8 @@ MonoBehaviour:
   maxOffset: 2
   speed: 2
   closeTime: 5
-  symmetricDoor: {fileID: 2048660538}
+  symmetricDoor: {fileID: 268160739}
+  portal: {fileID: 1171346364}
 --- !u!65 &1403193896
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2819,8 +2869,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 2048259293}
   receiver: {fileID: 190369232}
-  portal: {fileID: 0}
-  receiverPortal: {fileID: 0}
 --- !u!65 &1506501219
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2846,7 +2894,7 @@ GameObject:
   - component: {fileID: 1539602937}
   - component: {fileID: 1539602936}
   m_Layer: 0
-  m_Name: Door
+  m_Name: Door_B
   m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2880,6 +2928,7 @@ MonoBehaviour:
   speed: 2
   closeTime: 5
   symmetricDoor: {fileID: 2048660538}
+  portal: {fileID: 79363504}
 --- !u!65 &1539602937
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3045,6 +3094,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1747894373}
+  - component: {fileID: 1747894374}
   m_Layer: 0
   m_Name: Portal_C
   m_TagString: Untagged
@@ -3070,6 +3120,19 @@ Transform:
   m_Father: {fileID: 741643335}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1747894374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1747894372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ea37c8281accf54f895a9975f987221, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  renderPlane: {fileID: 1485575136}
+  colliderPlane: {fileID: 1318408374}
 --- !u!1 &1925997411
 GameObject:
   m_ObjectHideFlags: 0
@@ -3444,7 +3507,7 @@ GameObject:
   - component: {fileID: 2048660535}
   - component: {fileID: 2048660538}
   m_Layer: 0
-  m_Name: Door
+  m_Name: Door_A
   m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3532,3 +3595,4 @@ MonoBehaviour:
   speed: 2
   closeTime: 5
   symmetricDoor: {fileID: 1539602936}
+  portal: {fileID: 1212196608}

@@ -6,6 +6,7 @@ public class Door : MonoBehaviour {
     public float speed = 2.0f;
     public float closeTime = 5.0f;
     public Door symmetricDoor;
+    public Portal portal;
 
     private float offset = 0.0f;
     private float timeToClose = 0.0f;
@@ -14,6 +15,7 @@ public class Door : MonoBehaviour {
     public void Open() {
         isOpening = true;
         symmetricDoor.SymmetricalOpen();
+        PortalManager.CreatePortal(portal, symmetricDoor.portal);
     }
 
     public void SymmetricalOpen() {

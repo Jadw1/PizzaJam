@@ -4,8 +4,6 @@ public class PortalTeleport : MonoBehaviour {
 
     public Transform player;
     public Transform receiver;
-    public Transform portal;
-    public Transform receiverPortal;
 
     private bool playerIsOverlapping = false;
 

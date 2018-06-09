@@ -8,6 +8,7 @@ TagManager:
   - CameraA
   - CameraB
   - Pizza
+  - PM
   layers:
   - Default
   - TransparentFX
