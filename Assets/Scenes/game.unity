@@ -338,6 +338,12 @@ AudioSource:
   m_PrefabParentObject: {fileID: 82814769324614198, guid: a9c42f1231d2a104da46662f3d3ec8ad,
     type: 2}
   m_PrefabInternal: {fileID: 708473704}
+--- !u!114 &253437070 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114167989955600124, guid: 428e5ccff4d0d5a4d8259e7081b6066a,
+    type: 2}
+  m_PrefabInternal: {fileID: 392199347}
+  m_Script: {fileID: 11500000, guid: 707a920e1f3443d489ce39e5fb111a04, type: 3}
 --- !u!1001 &392199347
 Prefab:
   m_ObjectHideFlags: 0
@@ -375,11 +381,31 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4960764518912928, guid: 428e5ccff4d0d5a4d8259e7081b6066a, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114167989955600124, guid: 428e5ccff4d0d5a4d8259e7081b6066a,
+        type: 2}
+      propertyPath: symmetricDoor
+      value: 
+      objectReference: {fileID: 506974337}
+    - target: {fileID: 114220880966936936, guid: 428e5ccff4d0d5a4d8259e7081b6066a,
+        type: 2}
+      propertyPath: symmetricDoor
+      value: 
+      objectReference: {fileID: 253437070}
+    - target: {fileID: 4458313765363018, guid: 428e5ccff4d0d5a4d8259e7081b6066a, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 428e5ccff4d0d5a4d8259e7081b6066a, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &506974337 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114220880966936936, guid: 428e5ccff4d0d5a4d8259e7081b6066a,
+    type: 2}
+  m_PrefabInternal: {fileID: 392199347}
+  m_Script: {fileID: 11500000, guid: 707a920e1f3443d489ce39e5fb111a04, type: 3}
 --- !u!1001 &708473704
 Prefab:
   m_ObjectHideFlags: 0
@@ -426,11 +452,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a9c42f1231d2a104da46662f3d3ec8ad, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &957824370 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4458313765363018, guid: 428e5ccff4d0d5a4d8259e7081b6066a,
-    type: 2}
-  m_PrefabInternal: {fileID: 392199347}
 --- !u!1 &1559658101
 GameObject:
   m_ObjectHideFlags: 0
@@ -562,13 +583,13 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4125683793521116, guid: 66f01c0554f800e42967a2c7f1086407, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114533586321163622, guid: 66f01c0554f800e42967a2c7f1086407,
         type: 2}
       propertyPath: oppositePortal
       value: 
-      objectReference: {fileID: 957824370}
+      objectReference: {fileID: 0}
     - target: {fileID: 114533586321163622, guid: 66f01c0554f800e42967a2c7f1086407,
         type: 2}
       propertyPath: cameraPortal
@@ -578,7 +599,7 @@ Prefab:
         type: 2}
       propertyPath: cameraPortal
       value: 
-      objectReference: {fileID: 957824370}
+      objectReference: {fileID: 0}
     - target: {fileID: 114008665874860000, guid: 66f01c0554f800e42967a2c7f1086407,
         type: 2}
       propertyPath: oppositePortal

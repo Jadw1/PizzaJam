@@ -23,6 +23,10 @@ public class PortalCamera : MonoBehaviour {
     }
 	
 	void LateUpdate () {
+        if(oppositePortal == null || cameraPortal == null) {
+            return;
+        }
+
         float angularDifference = cameraPortal.rotation.eulerAngles.y - oppositePortal.rotation.eulerAngles.y;
         angularDifference = ClampAngle(angularDifference);
         Debug.Log(gameObject.name + angularDifference);
