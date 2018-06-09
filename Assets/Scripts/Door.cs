@@ -22,6 +22,10 @@ public class Door : MonoBehaviour {
         isOpening = true;
     }
 
+    private void Start() {
+        portal = transform.parent.GetComponent<Portal>();
+    }
+
     private void Update() {
 
         if (isOpening) {
