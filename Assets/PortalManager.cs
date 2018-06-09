@@ -8,13 +8,22 @@ public class PortalManager : MonoBehaviour {
     private static Material materialA;
     private static Material materialB;
 
+    private static Portal portal1;
+    private static Portal portal2;
+
     public static void CreatePortal(Portal portalA, Portal portalB) {
+        if ((portal1 == portalA && portal2 == portalB) || (portal1 == portalB && portal2 == portalA))
+            return;
+
         cameraA.cameraPortal = cameraB.oppositePortal = portalA.transform;
         cameraA.oppositePortal = cameraB.cameraPortal = portalB.transform;
         portalA.renderPlane.material = materialB;
         portalB.renderPlane.material = materialA;
         portalA.colliderPlane.receiver = portalB.colliderPlane.transform;
         portalB.colliderPlane.receiver = portalA.colliderPlane.transform;
+
+        portal1 = portalA;
+        portal2 = portalB;
     }
 
     private static void SetCameras() {
