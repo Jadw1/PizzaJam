@@ -3,5 +3,5 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RoomController : MonoBehaviour {
-	public GameObject[] doors;
+	public DoorTeleporter[] doors;
 }

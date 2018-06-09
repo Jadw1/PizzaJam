@@ -207,11 +207,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomStarting: {fileID: 1968887023658422, guid: 7f47e1034183d13459f80141622780bd,
     type: 2}
-  roomEnding: {fileID: 1284515822480066, guid: 428e5ccff4d0d5a4d8259e7081b6066a, type: 2}
+  roomEnding: {fileID: 1968887023658422, guid: 7f47e1034183d13459f80141622780bd, type: 2}
   roomArray:
   - {fileID: 1284515822480066, guid: 428e5ccff4d0d5a4d8259e7081b6066a, type: 2}
-  - {fileID: 1128018620395154, guid: 7254b82abad1e02418dd8b1a2814c035, type: 2}
-  - {fileID: 1056253113771144, guid: 1e20ff29d25c40546a2edca17f02c94f, type: 2}
   layers: 8
   rooms: []
 --- !u!4 &676471204
@@ -248,23 +246,27 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4915850333891678, guid: 9d2581ad714ec124599f4790836c88aa, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4915850333891678, guid: 9d2581ad714ec124599f4790836c88aa, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4915850333891678, guid: 9d2581ad714ec124599f4790836c88aa, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4915850333891678, guid: 9d2581ad714ec124599f4790836c88aa, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.00000058114523
       objectReference: {fileID: 0}
     - target: {fileID: 4915850333891678, guid: 9d2581ad714ec124599f4790836c88aa, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4915850333891678, guid: 9d2581ad714ec124599f4790836c88aa, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180.00002
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9d2581ad714ec124599f4790836c88aa, type: 2}
