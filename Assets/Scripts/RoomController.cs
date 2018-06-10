@@ -39,4 +39,22 @@ public class RoomController : MonoBehaviour {
             doors[i].Deactivate();
         }
     }
+
+	public void RandomizeConnections(RoomController lastRoom) {
+		foreach (Door door in doors) {
+			float chance = Random.Range(0.0f, 100.0f);
+
+			if (chance < 25.0f) {
+				door.Activate();
+
+				if (chance < 2.5f) {
+					door.symmetricDoor = exitDoor;
+				} else if (chance < 5.0f) {
+					door.symmetricDoor = entryDoor;
+				} else {
+					door.symmetricDoor = lastRoom.entryDoor;
+				}
+			}
+		}
+	}
 }

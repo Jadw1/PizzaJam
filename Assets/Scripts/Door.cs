@@ -60,7 +60,10 @@ public class Door : MonoBehaviour {
     }
 
     public void Deactivate() {
-        Debug.Log("Closing door!");
         transform.parent.gameObject.SetActive(false);
     }
+
+	public void Activate() {
+		transform.parent.gameObject.SetActive(true);
+	}
 }

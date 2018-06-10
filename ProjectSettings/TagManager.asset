@@ -13,6 +13,7 @@ TagManager:
   - DoorPortal
   - StartRoom
   - EndRoom
+  - RoomStack
   layers:
   - Default
   - TransparentFX

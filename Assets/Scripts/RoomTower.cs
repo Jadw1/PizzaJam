@@ -8,12 +8,17 @@ public class RoomTower : MonoBehaviour {
     public GameObject[] roomArray;
     public int layers = 8;
 
-
     private GameObject[] rooms;
 
-    // create starting room, create layers, create ending room
+	// create starting room, create layers, create ending room
 
-    private void Start() {
+	public void pizzaTaken() {
+		for (int i = 1; i < rooms.Length - 1; i++) {
+			rooms[i].GetComponent<RoomController>().RandomizeConnections(rooms[rooms.Length-1].GetComponent<RoomController>());
+		}
+	}
+
+	private void Start() {
         rooms = new GameObject[layers + 2];
 
         rooms[0] = Instantiate(startRoom, transform, false);
@@ -32,52 +37,5 @@ public class RoomTower : MonoBehaviour {
         for (int i = 0; i < rooms.Length - 1; i++) {
             PortalManager.MergeDoors(rooms[i].GetComponent<RoomController>().exitDoor, rooms[i + 1].GetComponent<RoomController>().entryDoor);
         }
-
-        /*GameObject pizza = GameObject.FindWithTag("Pizza");
-		if (pizza != null) {
-			pizza.GetComponent<PizzaLogic>().tower = this;
-		}
-
-		int last = -1;
-
-        for (int i = 0; i < rooms.Length; i++) {
-            rooms[i].name = "Room " + i;
-            rooms[i].transform.localPosition = new Vector3(0, -5 * i, 0);
-
-			if (i < rooms.Length - 1) {
-				RoomController cin = rooms[i].GetComponent<RoomController>();
-				RoomController cout = rooms[i + 1].GetComponent<RoomController>();
-
-				int entranceID = Random.Range(0, cin.doors.Length);
-				int exitID = Random.Range(0, cout.doors.Length);
-
-				while (entranceID == last) entranceID = Random.Range(0, cout.doors.Length);
-
-				last = exitID;
-
-				DoorTeleporter entrance = cin.doors[entranceID];
-				DoorTeleporter exit = cout.doors[exitID];
-
-				entrance.gameObject.SetActive(true);
-				exit.gameObject.SetActive(true);
-
-				entrance.link = exit;
-				exit.link = entrance;
-			}
-		}*/
     }
-
-	/*public void pizzaTaken() {
-		DoorTeleporter pizza = rooms[rooms.Length - 1].GetComponent<RoomController>().doors[0];
-
-		foreach (GameObject room in rooms) {
-			foreach(DoorTeleporter door in room.GetComponent<RoomController>().doors) {
-				door.gameObject.SetActive(true);
-
-				if (door.link == null) {
-					door.link = pizza;
-				}
-			}
-		}
-	}*/
 }
