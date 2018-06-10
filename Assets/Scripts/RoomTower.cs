@@ -10,14 +10,7 @@ public class RoomTower : MonoBehaviour {
 
     public GameObject[] rooms;
     private GameObject startRoomInstance;
-
-	// create starting room, create layers, create ending room
-
-	public void pizzaTaken() {
-		for (int i = 1; i < rooms.Length - 1; i++) {
-			rooms[i].GetComponent<RoomController>().RandomizeConnections(this);
-		}
-	}
+    private RoomController[] controllers;
 
 	private void Start() {
         CreateStartRoom();
@@ -30,6 +23,8 @@ public class RoomTower : MonoBehaviour {
     }
 
     public void GenerateLevel(int levelindicator) {
+        DeleteLevel();
+
         layers = levelindicator + 1;
         rooms = new GameObject[layers + 1];
 
@@ -42,9 +37,49 @@ public class RoomTower : MonoBehaviour {
         rooms[layers] = Instantiate(endRoom, transform, false);
         rooms[layers].transform.localPosition = new Vector3(0.0f, 5.0f * (layers + 1), 0.0f);
 
-        PortalManager.MergeDoors(startRoomInstance.GetComponent<RoomController>().exitDoor, rooms[0].GetComponent<RoomController>().entryDoor);
-        for (int i = 0; i < rooms.Length - 1; i++) {
-            PortalManager.MergeDoors(rooms[i].GetComponent<RoomController>().exitDoor, rooms[i + 1].GetComponent<RoomController>().entryDoor);
+        GetRoomControllers(rooms.Length + 1);
+
+        for (int i = 0; i < controllers.Length - 1; i++) {
+            PortalManager.MergeDoors(controllers[i].exitDoor, controllers[i + 1].entryDoor);
         }
     }
+
+    private void GetRoomControllers(int amount) {
+        controllers = new RoomController[amount];
+        for(int i = 0; i < amount; i++) {
+            if(i == 0) {
+                controllers[i] = startRoomInstance.GetComponent<RoomController>();
+            }
+            else {
+                controllers[i] = rooms[i-1].GetComponent<RoomController>();
+            }
+        }
+    }
+
+    private void DeleteLevel() {
+        foreach(GameObject room in rooms) {
+            Destroy(room);
+        }
+    }
+
+    public void GenerataWrongDoors() {
+        int level = rooms.Length - 2;
+
+        for(int i = rooms.Length - 2; i <= 0; i--) {
+            int amount = level;
+            amount += (Random.Range(0, 10) < 5) ? 1 : 0;
+
+            for(int d = 0; d < amount; d++) {
+
+            }
+        }
+    }
+
+
+
+	public void pizzaTaken() {
+		for (int i = 1; i < rooms.Length - 1; i++) {
+			rooms[i].GetComponent<RoomController>().RandomizeConnections(this);
+		}
+	}
 }
