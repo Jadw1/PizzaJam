@@ -29,7 +29,7 @@ public class RoomController : MonoBehaviour {
     }
 
     public void DeactivateDoors(int index) {
-        roomIndex = index;
+        roomIndex = index + 1;
 
         for(int i = 0; i < doors.Length; i++) {
             if (i == entryDoorIndex || i == exitDoorIndex) {
