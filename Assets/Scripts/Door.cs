@@ -15,6 +15,7 @@ public class Door : MonoBehaviour {
 
 
     public void Open(bool cheat = false) {
+        PortalManager.CloseAllDoors();
         isOpening = true;
         if (cheat) {
             symmetricDoor = GameObject.FindGameObjectWithTag("RoomStack").GetComponent<RoomTower>().GetStartRoomDoor();

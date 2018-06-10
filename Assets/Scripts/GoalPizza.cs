@@ -68,14 +68,18 @@ public class GoalPizza : MonoBehaviour {
 	private void OnTriggerEnter(Collider other) {
 		if (!returned) {
 			returned = true;
+            PortalManager.CloseAllDoors();
 
-			if (!finished) {
+            RoomTower tower = GameObject.FindGameObjectWithTag("RoomStack").GetComponent<RoomTower>();
+
+            if (!finished) {
 				TextMessage.AddMessage((8 - completed) + " pieces left to collect, go back.");
 				if (completed != 0) {
-					GameObject.FindGameObjectWithTag("RoomStack").GetComponent<RoomTower>().GenerateLevel(completed);
+					tower.GenerateLevel(completed);
 				}
 			} else {
-				// Player won the game.
+                // Player won the game.
+                PortalManager.MergeDoors(tower.GetStartRoomDoor(), tower.GetStartRoomDoor());
 			}
 		}
 	}
