@@ -8,7 +8,7 @@ public class Interact : MonoBehaviour {
 
 	public Text interactText;
 
-	int[] code = new int[6];
+	public int[] code = new int[6];
 	int curCode = 0;
 	
     private void Start() {
@@ -29,7 +29,9 @@ public class Interact : MonoBehaviour {
 				if (hit.transform.tag == "Door") {
 					hit.transform.GetComponent<Door>().Open(isCodeCorrect() ? true : false);
 				}
-			} else if (hit.transform.tag == "MainPizza") {
+			}
+
+			if (hit.transform.tag == "MainPizza") {
 				GoalPizza pizza = hit.transform.GetComponent<GoalPizza>();
 
 				if (pizza != null && pizza.CurrentState() == 8) {
@@ -51,9 +53,6 @@ public class Interact : MonoBehaviour {
 				}
 			}
 		}
-
-		if (isCodeCorrect()) Debug.Log("CODE: CORRECT"); else Debug.Log(code);
-
 		interactText.text = message;
 	}
 }
