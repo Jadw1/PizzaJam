@@ -44,6 +44,5 @@ public class PortalManager : MonoBehaviour {
     public static void MergeDoors(Door doorA, Door doorB) {
         doorA.symmetricDoor = doorB;
         doorB.symmetricDoor = doorA;
-        Debug.Log("doors merged");
     }
 }

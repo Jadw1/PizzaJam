@@ -23,7 +23,7 @@ public class RoomTower : MonoBehaviour {
 
     public void GenerateLevel(int levelIndicator) {
         DeleteLevel();
-        //Debug.Log("generating level");
+
         int layers = levelIndicator + 1;
 
         rooms = new GameObject[layers + 1];

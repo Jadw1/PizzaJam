@@ -7,28 +7,19 @@ public class RoomController : MonoBehaviour {
     public int roomIndex;
 
     public Door entryDoor {
-        get {
-            if (doors.Length == 0) {
-                GetDoors();
-            }
-            return doors[entryDoorIndex]; }
+        get { return doors[entryDoorIndex]; }
     }
     public Door exitDoor {
         get {
-            if(doors.Length == 0) {
-                GetDoors();
-            }
+            Debug.Log(exitDoorIndex);
 
             return doors[exitDoorIndex]; }
     }
 
-    private void GetDoors() {
-        doors = transform.GetComponentsInChildren<Door>();
-        Debug.Log("Getting doors. Amount " + doors.Length + "    " + gameObject.name);
-    }
 
     private void Awake() {
-        GetDoors();
+        doors = transform.GetComponentsInChildren<Door>();
+        Debug.Log("getting door");
         if(gameObject.tag != "StartRoom" && gameObject.tag != "EndRoom") {
             entryDoorIndex = Random.Range(0, doors.Length);
             exitDoorIndex = Random.Range(0, doors.Length);
