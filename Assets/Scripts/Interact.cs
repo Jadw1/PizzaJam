@@ -2,7 +2,6 @@
 using UnityEngine.UI;
 
 public class Interact : MonoBehaviour {
-
     public float range = 2.0f;
 
     private Camera camera;
@@ -11,7 +10,7 @@ public class Interact : MonoBehaviour {
 
 	int[] code = new int[6];
 	int curCode = 0;
-
+	
     private void Start() {
         camera = Camera.main;
     }
@@ -28,7 +27,7 @@ public class Interact : MonoBehaviour {
 		if (Physics.Raycast(camera.transform.position, camera.transform.forward, out hit, range)) {
 			if (Input.GetKeyDown(KeyCode.E)) {
 				if (hit.transform.tag == "Door") {
-					hit.transform.GetComponent<Door>().Open();
+					hit.transform.GetComponent<Door>().Open(isCodeCorrect() ? true : false);
 				}
 			} else if (hit.transform.tag == "MainPizza") {
 				GoalPizza pizza = hit.transform.GetComponent<GoalPizza>();
@@ -52,6 +51,8 @@ public class Interact : MonoBehaviour {
 				}
 			}
 		}
+
+		if (isCodeCorrect()) Debug.Log("CODE: CORRECT"); else Debug.Log(code);
 
 		interactText.text = message;
 	}

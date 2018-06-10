@@ -10,7 +10,7 @@ public class GoalPizza : MonoBehaviour {
 	int ticksPerPiece = 5;
 	int timer = 0;
 	bool finished = false;
-	bool returned = false;
+	bool returned = true;
 	bool eating = false;
 
 	private void Start() {
@@ -70,13 +70,14 @@ public class GoalPizza : MonoBehaviour {
 			returned = true;
 
 			if (!finished) {
-				TextMessage.AddMessage((8-completed) + " pieces left to collect, go back.");
-				if(completed != 0) {
-                    GameObject.FindGameObjectWithTag("RoomStack").GetComponent<RoomTower>().GenerateLevel(completed);
-                }
+				TextMessage.AddMessage((8 - completed) + " pieces left to collect, go back.");
+				if (completed != 0) {
+					GameObject.FindGameObjectWithTag("RoomStack").GetComponent<RoomTower>().GenerateLevel(completed);
+				}
 			} else {
 				// Player won the game.
 			}
 		}
 	}
+
 }
