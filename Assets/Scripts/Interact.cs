@@ -38,7 +38,14 @@ public class Interact : MonoBehaviour {
 
 		string message = "";
 
-		if (Physics.Raycast(camera.transform.position, camera.transform.forward, out hit, range)) {
+        if (Input.GetKeyDown(KeyCode.R)) {
+            GameObject.FindGameObjectWithTag("MainPizza").GetComponent<GoalPizza>().ResetLevel();
+            RoomTower tower = GameObject.FindGameObjectWithTag("RoomStack").GetComponent<RoomTower>();
+            tower.DeactivateDoorsInRooms();
+            tower.TeleportToStart(transform);
+        }
+
+        if (Physics.Raycast(camera.transform.position, camera.transform.forward, out hit, range)) {
 			if (Input.GetKeyDown(KeyCode.E)) {
 				if (hit.transform.tag == "Door") {
 					if (isCodeCorrect()) {

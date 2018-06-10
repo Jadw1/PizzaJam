@@ -5,22 +5,35 @@ using UnityEngine;
 public class PizzaLogic : MonoBehaviour {
 	public GameObject[] pieces;
 
+    private int state;
+    private bool collected = false;
+
 	private void Start() {
 		foreach (GameObject piece in pieces) {
 			piece.SetActive(false);
 		}
 
 		GoalPizza pizza = GameObject.FindGameObjectWithTag("MainPizza").GetComponent<GoalPizza>();
-		pieces[pizza.CurrentState()].SetActive(true);
+        state = pizza.CurrentState();
+        pieces[state].SetActive(true);
 	}
 
 	private void OnTriggerEnter(Collider other) {
-		Destroy(gameObject);
+		//Destroy(gameObject);
+        if(!collected) {
+		    RoomTower tower = GameObject.FindGameObjectWithTag("RoomStack").GetComponent<RoomTower>();
+		    tower.pizzaTaken();
 
-		RoomTower tower = GameObject.FindGameObjectWithTag("RoomStack").GetComponent<RoomTower>();
-		tower.pizzaTaken();
+		    GoalPizza pizza = GameObject.FindGameObjectWithTag("MainPizza").GetComponent<GoalPizza>();
+		    pizza.AddPiece();
 
-		GoalPizza pizza = GameObject.FindGameObjectWithTag("MainPizza").GetComponent<GoalPizza>();
-		pizza.AddPiece();
+            pieces[state].SetActive(false);
+            collected = true;
+        }
 	}
+
+    public void ActivatePiece() {
+        pieces[state].SetActive(true);
+        collected = false;
+    }
 }

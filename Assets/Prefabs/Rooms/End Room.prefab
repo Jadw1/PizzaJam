@@ -109,8 +109,8 @@ GameObject:
   - component: {fileID: 114156467346806244}
   - component: {fileID: 65967252769839340}
   m_Layer: 0
-  m_Name: Goal Pizza
-  m_TagString: MainPizza
+  m_Name: Pizza Piece
+  m_TagString: PizzaPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -750,7 +750,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1601807625564798}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -13.893382, y: 8.675747, z: 9.988134}
+  m_LocalPosition: {x: 1.1078296, y: -1.8256474, z: 0.3189888}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4706533524851596}

@@ -17,6 +17,7 @@ TagManager:
   - MainPizza
   - RightLamp
   - LeftLamp
+  - PizzaPiece
   layers:
   - Default
   - TransparentFX

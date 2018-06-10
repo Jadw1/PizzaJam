@@ -22,6 +22,14 @@ public class RoomTower : MonoBehaviour {
         startRoomInstance.transform.localPosition = new Vector3(0.0f, 0.0f, 0.0f);
     }
 
+    public void TeleportToStart(Transform player) {
+        player.position = new Vector3(2.0f, 1.0f, 2.0f);
+    }
+
+    public void TeleportToEnd(Transform player) {
+        player.position = new Vector3(2.0f, 5.0f * (layers + 1) + 1.0f, 2.0f);
+    }
+
     public void GenerateLevel(int levelindicator) {
         DeleteLevel();
 
@@ -41,6 +49,12 @@ public class RoomTower : MonoBehaviour {
 
         for (int i = 0; i < controllers.Length - 1; i++) {
             PortalManager.MergeDoors(controllers[i].exitDoor, controllers[i + 1].entryDoor);
+        }
+    }
+
+    public void DeactivateDoorsInRooms() {
+        for (int i = 0; i < layers; i++) {
+            rooms[i].GetComponent<RoomController>().DeactivateDoors(i);
         }
     }
 

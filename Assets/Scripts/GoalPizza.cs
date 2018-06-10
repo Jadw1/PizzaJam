@@ -19,7 +19,20 @@ public class GoalPizza : MonoBehaviour {
 		}
 	}
 
-	public int CurrentState() {
+    public void ResetLevel() {
+        if (!returned) {
+            returned = true;
+            if (finished) {
+                finished = false;
+            }
+            pieces[--completed].SetActive(false);
+        }
+
+       
+        GameObject.FindGameObjectWithTag("PizzaPiece").GetComponent<PizzaLogic>().ActivatePiece();
+    }
+
+    public int CurrentState() {
 		return completed;
 	}
 
