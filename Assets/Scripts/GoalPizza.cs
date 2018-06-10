@@ -39,7 +39,9 @@ public class GoalPizza : MonoBehaviour {
 
 			if (!finished) {
 				TextMessage.AddMessage((8-completed) + " pieces left to collect, go back.");
-				// Reset the tower here
+				if(completed != 0) {
+                    GameObject.FindGameObjectWithTag("RoomStack").GetComponent<RoomTower>().GenerateLevel(completed);
+                }
 			} else {
 				// Player won the game.
 			}
