@@ -510,7 +510,8 @@ MonoBehaviour:
   - {fileID: 1528462974483778, guid: 1f3b8e26452796f4b80839ccbb56e702, type: 2}
   - {fileID: 1893504090262664, guid: 66b0c2f2dc54e8646affd458521bfa2a, type: 2}
   - {fileID: 1509167043835906, guid: f05ae28802e8e514ba1c91bc479b2d5c, type: 2}
-  layers: 8
+  layers: 3
+  rooms: []
 --- !u!4 &2019123254
 Transform:
   m_ObjectHideFlags: 0

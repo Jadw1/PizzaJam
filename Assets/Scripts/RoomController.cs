@@ -40,7 +40,7 @@ public class RoomController : MonoBehaviour {
         }
     }
 
-	public void RandomizeConnections(RoomController lastRoom) {
+	public void RandomizeConnections(RoomTower tower) {
 		foreach (Door door in doors) {
 			float chance = Random.Range(0.0f, 100.0f);
 
@@ -51,8 +51,10 @@ public class RoomController : MonoBehaviour {
 					door.symmetricDoor = exitDoor;
 				} else if (chance < 5.0f) {
 					door.symmetricDoor = entryDoor;
+				} else if (chance < 15.0f) {
+					door.symmetricDoor = tower.rooms[Random.Range(roomIndex, tower.rooms.Length)].GetComponent<RoomController>().entryDoor;
 				} else {
-					door.symmetricDoor = lastRoom.entryDoor;
+					door.symmetricDoor = tower.rooms[tower.rooms.Length - 1].GetComponent<RoomController>().entryDoor;
 				}
 			}
 		}

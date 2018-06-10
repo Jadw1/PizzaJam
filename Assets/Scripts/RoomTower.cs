@@ -8,13 +8,13 @@ public class RoomTower : MonoBehaviour {
     public GameObject[] roomArray;
     public int layers = 8;
 
-    private GameObject[] rooms;
+    public GameObject[] rooms;
 
 	// create starting room, create layers, create ending room
 
 	public void pizzaTaken() {
 		for (int i = 1; i < rooms.Length - 1; i++) {
-			rooms[i].GetComponent<RoomController>().RandomizeConnections(rooms[rooms.Length-1].GetComponent<RoomController>());
+			rooms[i].GetComponent<RoomController>().RandomizeConnections(this);
 		}
 	}
 
