@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 64076243780930178}
   m_Layer: 0
   m_Name: Lamp
-  m_TagString: RightLamp
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -283,7 +283,7 @@ GameObject:
   - component: {fileID: 114136949242914410}
   m_Layer: 0
   m_Name: End Room
-  m_TagString: LeftLamp
+  m_TagString: EndRoom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -716,7 +716,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1601807625564798}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 8.019453, y: -9.987757, z: 4.905264}
+  m_LocalPosition: {x: -6.0687275, y: 8.339925, z: 20.776655}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4706533524851596}
