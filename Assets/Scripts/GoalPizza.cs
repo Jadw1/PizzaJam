@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class GoalPizza : MonoBehaviour {
 	public GameObject[] pieces;
@@ -7,13 +9,10 @@ public class GoalPizza : MonoBehaviour {
 	bool finished = false;
 	bool returned = false;
 
-    public RoomTower tower;
-
-	private void Awake() {
+	private void Start() {
 		foreach (GameObject piece in pieces) {
 			piece.SetActive(false);
 		}
-        tower = GameObject.FindGameObjectWithTag("RoomStack").GetComponent<RoomTower>();
 	}
 
 	public int CurrentState() {
@@ -40,7 +39,7 @@ public class GoalPizza : MonoBehaviour {
 
 			if (!finished) {
 				TextMessage.AddMessage((8-completed) + " pieces left to collect, go back.");
-                //tower.GenerateLevel(0);
+				// Reset the tower here
 			} else {
 				// Player won the game.
 			}
