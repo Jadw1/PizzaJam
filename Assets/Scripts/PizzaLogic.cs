@@ -18,7 +18,7 @@ public class PizzaLogic : MonoBehaviour {
 		Destroy(gameObject);
 
 		RoomTower tower = GameObject.FindGameObjectWithTag("RoomStack").GetComponent<RoomTower>();
-		tower.GenerataWrongDoors();
+		tower.pizzaTaken();
 
 		GoalPizza pizza = GameObject.FindGameObjectWithTag("MainPizza").GetComponent<GoalPizza>();
 		pizza.AddPiece();

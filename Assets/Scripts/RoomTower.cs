@@ -62,7 +62,7 @@ public class RoomTower : MonoBehaviour {
         }
     }
 
-    public void GenerataWrongDoors() {
+    /*public void GenerataWrongDoors() {
         int level = rooms.Length - 2;
 
         for(int i = rooms.Length - 2; i <= 0; i--) {
@@ -73,7 +73,7 @@ public class RoomTower : MonoBehaviour {
 
             }
         }
-    }
+    }*/
 
 
 
