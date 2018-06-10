@@ -502,7 +502,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startRoom: {fileID: 1868394255813712, guid: a8e80bf02ed4f3e418343379181b3b51, type: 2}
-  endRoom: {fileID: 1165343300693844, guid: 718f149aa4909c045904db2423d54650, type: 2}
+  endRoom: {fileID: 1601807625564798, guid: 718f149aa4909c045904db2423d54650, type: 2}
   roomArray:
   - {fileID: 1971710910992012, guid: a9d999d907c8d024f8c4bba42f4667ea, type: 2}
   - {fileID: 1598368496924372, guid: 975867fafb095eb438915c34b356b18a, type: 2}

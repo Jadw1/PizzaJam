@@ -45,6 +45,8 @@ public class RoomController : MonoBehaviour {
 			float chance = Random.Range(0.0f, 100.0f);
 
 			if (chance < 25.0f) {
+				if (door.symmetricDoor != null) return;
+
 				door.Activate();
 
 				if (chance < 2.5f) {

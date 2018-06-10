@@ -30,12 +30,9 @@ public class TextMessage : MonoBehaviour {
 
 		text.text = "";
 
-		addMessage("Hi!");
-		addMessage("You go get that pizza.");
-		addMessage("It's at the end of this hallway.");
-		addMessage("Don't worry, you have only one way to go.");
-		addMessage("Just follow the only path.");
-		addMessage("You MIGHT want to remember where you go though...");
+		addMessage("Welcome!");
+		addMessage("Follow the only path to get a piece of pizza.");
+		addMessage("Remember to remember the route.");
 	}
 
 
