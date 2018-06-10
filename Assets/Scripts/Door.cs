@@ -12,8 +12,13 @@ public class Door : MonoBehaviour {
     private bool isOpening = false;
     private Portal portal;
 
-    public void Open() {
+
+
+    public void Open(bool cheat = false) {
         isOpening = true;
+        if (cheat) {
+            symmetricDoor = GameObject.FindGameObjectWithTag("RoomStack").GetComponent<RoomTower>().GetStartRoomDoor();
+        }
         symmetricDoor.SymmetricalOpen();
         PortalManager.CreatePortal(portal, symmetricDoor.portal);
     }
