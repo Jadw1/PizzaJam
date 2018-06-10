@@ -51,7 +51,7 @@ public class PortalManager : MonoBehaviour {
         Door[] doors = new Door[objects.Length];
         for(int i = 0; i < doors.Length; i++) {
             doors[i] = objects[i].GetComponent<Door>();
-            //doors[i]
+            doors[i].Close();
         }
     }
 }

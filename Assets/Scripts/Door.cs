@@ -23,6 +23,11 @@ public class Door : MonoBehaviour {
         PortalManager.CreatePortal(portal, symmetricDoor.portal);
     }
 
+    public void Close() {
+        isOpening = false;
+        timeToClose = 0.0f;
+    }
+
     public void SymmetricalOpen() {
         isOpening = true;
     }
