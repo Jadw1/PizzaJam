@@ -82,4 +82,8 @@ public class RoomTower : MonoBehaviour {
 			rooms[i].GetComponent<RoomController>().RandomizeConnections(this);
 		}
 	}
+
+    public Door GetStartRoomDoor() {
+        return startRoomInstance.GetComponent<RoomController>().exitDoor;
+    }
 }

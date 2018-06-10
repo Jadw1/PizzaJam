@@ -45,4 +45,13 @@ public class PortalManager : MonoBehaviour {
         doorA.symmetricDoor = doorB;
         doorB.symmetricDoor = doorA;
     }
+
+    public static void CloseAllDoors() {
+        GameObject[] objects = GameObject.FindGameObjectsWithTag("Door");
+        Door[] doors = new Door[objects.Length];
+        for(int i = 0; i < doors.Length; i++) {
+            doors[i] = objects[i].GetComponent<Door>();
+            //doors[i]
+        }
+    }
 }
