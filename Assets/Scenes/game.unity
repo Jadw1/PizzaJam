@@ -348,7 +348,6 @@ GameObject:
   - component: {fileID: 514459353}
   - component: {fileID: 514459352}
   - component: {fileID: 514459350}
-  - component: {fileID: 514459351}
   m_Layer: 5
   m_Name: Text (1)
   m_TagString: MessageSystem
@@ -389,24 +388,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 
---- !u!114 &514459351
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 514459349}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0119ef3dcd7da74dad84970ce54c8de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  keyStrokes:
-  - {fileID: 8300000, guid: e63b69ee11150f9499ebf420ea062424, type: 3}
-  - {fileID: 8300000, guid: db32896292fba634281f187623f6fb1a, type: 3}
-  - {fileID: 8300000, guid: 540d1d2b61dbaf14c85693492d93b67b, type: 3}
-  - {fileID: 8300000, guid: 24f4dd1be5359194f840fa9963bf40d6, type: 3}
-  - {fileID: 8300000, guid: 7297a6e09bb881b449512729e7c1ef9b, type: 3}
-  audio: {fileID: 242316362}
 --- !u!222 &514459352
 CanvasRenderer:
   m_ObjectHideFlags: 0
