@@ -17,12 +17,6 @@ public class RoomTower : MonoBehaviour {
         GenerateLevel(0);
     }
 
-    private void Update() {
-        if (Input.GetKeyDown(KeyCode.Q)) {
-            PortalManager.CloseAllDoors();
-        }
-    }
-
     private void CreateStartRoom() {
         startRoomInstance = Instantiate(startRoom, transform, false);
         startRoomInstance.transform.localPosition = new Vector3(0.0f, 0.0f, 0.0f);
