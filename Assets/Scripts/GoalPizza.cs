@@ -1,13 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GoalPizza : MonoBehaviour {
 	public GameObject[] pieces;
 
 	int completed = 0;
+	int ticksPerPiece = 5;
+	int timer = 0;
 	bool finished = false;
 	bool returned = false;
+	bool eating = false;
 
 	private void Start() {
 		foreach (GameObject piece in pieces) {
@@ -30,6 +34,34 @@ public class GoalPizza : MonoBehaviour {
 
 		if (completed == pieces.Length) {
 			finished = true;
+		}
+	}
+
+	public void EatPizza() {
+		eating = true;
+	}
+
+	private void FixedUpdate() {
+		if (eating) {
+			timer++;
+
+			if (timer >= ticksPerPiece) {
+				timer -= ticksPerPiece;
+
+				completed--;
+
+				pieces[completed].SetActive(false);
+
+				if (completed == 0) {
+					RoomTower tower = GameObject.FindGameObjectWithTag("RoomStack").GetComponent<RoomTower>();
+					tower.GenerateLevel(0);
+
+					finished = false;
+					returned = true;
+					eating = false;
+					timer = 0;
+				}
+			}
 		}
 	}
 
